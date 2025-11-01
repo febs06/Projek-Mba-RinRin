@@ -136,6 +136,35 @@
             margin-top: 20px;
         }
 
+        /* --- CSS UNTUK DARK MODE --- */
+
+        /* Aturan ini berlaku HANYA saat <body> memiliki class .dark-mode */
+
+        body.dark-mode {
+            background-color: #1a1a1a; /* Latar utama jadi gelap */
+            color: #e0e0e0;           /* Teks utama jadi terang */
+        }
+
+        /* Ubah kartu produk (ini akan otomatis mengubah h4-nya) */
+        body.dark-mode .kartu-produk {
+            background-color: #2a2a2a; /* Latar kartu jadi abu-abu gelap */
+            border-color: #444;       /* Garis batas kartu */
+            color: #e0e0e0;           /* Teks di dalam kartu jadi terang */
+        }
+
+        /* Ubah kotak pencarian */
+        body.dark-mode .search-container input {
+            background-color: #333;
+            border-color: #555;
+            color: white; /* Teks di dalam input jadi putih */
+        }
+
+        /* Ubah container di halaman detail (akan diwarisi oleh h1 & p) */
+        body.dark-mode .container {
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+        }
+
         @media (max-width: 768px) {
     
             /* 1. Ubah arah flexbox di container */
@@ -178,6 +207,13 @@
             <li><a href="toko.html">Home</a></li>
             <li><a href="#">Kategori</a></li>
             <li><a href="#">Tentang</a></li>
+
+            <li>
+                <button id="darkModeToggle" 
+                        style="background:none; border:none; color:white; font-size:1.2em; cursor:pointer; padding: 0 5px;">
+                    🌙
+                </button>
+            </li>
         </ul>
     </nav>
 
@@ -231,6 +267,17 @@
             <p>&copy; 2025 TokoSepatu. Hak Cipta Dilindungi.</p>
         </div>
     </footer>
+
+    <script>
+        // 1. Temukan tombol berdasarkan ID-nya
+        const toggleButton = document.getElementById("darkModeToggle");
+
+        // 2. Tambahkan pendengar 'klik'
+        toggleButton.addEventListener("click", function() {
+            // 3. Perintahkan <body> untuk menambah/menghapus class 'dark-mode'
+            document.body.classList.toggle("dark-mode");
+        });
+    </script>
 
 </body>
 </html>
