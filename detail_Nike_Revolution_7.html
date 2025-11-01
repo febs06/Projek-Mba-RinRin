@@ -78,6 +78,37 @@
             display: block; /* Agar pindah baris */
             margin-bottom: 20px;
         }
+
+        @media (max-width: 768px) {
+    
+            /* 1. Ubah arah flexbox di container */
+            .container-produk {
+                flex-direction: column; /* Susun ke bawah! */
+                align-items: center;    /* Pusatkan kartu di tengah */
+            }
+    
+            /* 2. Buat kartu lebih lebar agar pas di layar HP */
+            .kartu-produk {
+                width: 90%; /* Lebar kartu jadi 90% dari lebar layar */
+                max-width: 400px; /* Batas lebar maksimum */
+            }
+    
+            /* 3. Atur navbar agar tidak berantakan */
+            .navbar {
+                flex-direction: column; /* Susun logo & link ke bawah */
+                align-items: flex-start; /* Rata kiri */
+            }
+    
+            .navbar .nav-links {
+                margin-top: 10px; /* Jarak antara logo dan link */
+            }
+    
+            .navbar .nav-links li {
+                margin-left: 0; /* Hapus margin kiri di HP */
+                margin-right: 15px; /* Beri jarak kanan */
+            }
+        }
+        
     </style>
 </head>
 <body>
