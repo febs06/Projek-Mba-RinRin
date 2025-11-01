@@ -104,6 +104,29 @@
         .kartu-produk button:hover {
             background-color: #0056b3; /* Biru lebih gelap */
         }
+
+        /* CSS UNTUK SEARCH BAR */
+        .search-container {
+            display: flex; /* Membuat input dan tombol berdampingan */
+        }
+
+        .search-container input {
+            padding: 8px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px; /* Sudut kiri bulat */
+            outline: none; /* Hilangkan outline saat diklik */
+        }
+
+        .search-container button {
+            padding: 8px 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0; /* Sudut kanan bulat */
+        }
+
         /* --- MEDIA QUERY UNTUK MOBILE --- */
         /* Ini akan berlaku jika lebar layar 768px atau lebih kecil */
 
@@ -126,6 +149,17 @@
                 flex-direction: column; /* Susun logo & link ke bawah */
                 align-items: flex-start; /* Rata kiri */
             }
+
+            /* TAMBAHKAN INI UNTUK SEARCH & LINKS DI HP */
+            .search-container {
+                margin-top: 10px;
+                width: 100%; /* Buat lebar penuh */
+                display: flex;
+            }
+
+            .search-container input {
+                flex-grow: 1; /* Buat input memenuhi sisa ruang */
+            }
     
             .navbar .nav-links {
                 margin-top: 10px; /* Jarak antara logo dan link */
@@ -135,9 +169,7 @@
                 margin-left: 0; /* Hapus margin kiri di HP */
                 margin-right: 15px; /* Beri jarak kanan */
             }
-        }
-
-        
+        }   
         
     </style>
 </head>
@@ -145,10 +177,16 @@
 
     <nav class="navbar">
         <div class="logo">
-            <a href="toko.html">TokoSepatu</a>
+            <a href="index.html">TokoSepatu</a>
         </div>
+    
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Cari sepatu...">
+            <button type"button" onclick="filterProduk()">Cari</button>
+        </div>
+    
         <ul class="nav-links">
-            <li><a href="toko.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">Kategori</a></li>
             <li><a href="#">Tentang</a></li>
         </ul>
@@ -191,6 +229,34 @@
             // Kita gunakan variabel 'namaProduk' di sini
             alert(namaProduk + " ditambahkan ke keranjang!");
         }
+
+        // INI FUNGSI BARU UNTUK FILTER
+        function filterProduk() {
+            // 1. Ambil teks dari kotak input
+            var input = document.getElementById("searchInput");
+            var filterText = input.value.toUpperCase(); // Ubah ke huruf besar agar tidak sensitif
+
+            // 2. Ambil semua kartu produk
+            var container = document.querySelector(".container-produk");
+            var cards = container.getElementsByClassName("kartu-produk");
+
+            // 3. Loop (ulangi) untuk setiap kartu
+            for (var i = 0; i < cards.length; i++) {
+                // 4. Ambil judul (h4) dari dalam kartu
+                var titleElement = cards[i].getElementsByTagName("h4")[0];
+                var titleText = titleElement.textContent || titleElement.innerText;
+
+                // 5. Cek apakah judul mengandung teks filter
+                if (titleText.toUpperCase().indexOf(filterText) > -1) {
+                    // Jika cocok, tampilkan kartunya
+                    cards[i].style.display = ""; 
+                } else {
+                    // Jika tidak cocok, sembunyikan kartunya
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+        
     </script>
 
 </body>

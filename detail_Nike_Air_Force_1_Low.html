@@ -79,6 +79,28 @@
             margin-bottom: 20px;
         }
 
+        /* CSS UNTUK SEARCH BAR */
+        .search-container {
+            display: flex; /* Membuat input dan tombol berdampingan */
+        }
+
+        .search-container input {
+            padding: 8px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px; /* Sudut kiri bulat */
+            outline: none; /* Hilangkan outline saat diklik */
+        }
+
+        .search-container button {
+            padding: 8px 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0; /* Sudut kanan bulat */
+        }
+
         @media (max-width: 768px) {
     
             /* 1. Ubah arah flexbox di container */
@@ -108,17 +130,23 @@
                 margin-right: 15px; /* Beri jarak kanan */
             }
         }
-        
+
     </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">
-            <a href="toko.html">TokoSepatu</a>
+            <a href="index.html">TokoSepatu</a>
         </div>
+    
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Cari sepatu...">
+            <button type"button" onclick="filterProduk()">Cari</button>
+        </div>
+    
         <ul class="nav-links">
-            <li><a href="toko.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">Kategori</a></li>
             <li><a href="#">Tentang</a></li>
         </ul>
