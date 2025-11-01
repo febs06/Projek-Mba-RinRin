@@ -79,6 +79,63 @@
             margin-bottom: 20px;
         }
 
+        /* --- CSS UNTUK FOOTER --- */
+        .site-footer {
+            background-color: #222; /* Warna latar sangat gelap */
+            color: #aaa;           /* Warna teks abu-abu muda */
+            padding-top: 40px;
+            font-size: 0.9em;
+
+            /* -- INI KUNCINYA -- */
+            margin-top: auto; /* Mendorong footer ke bawah */
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Agar responsif di HP */
+        }
+
+        .footer-column {
+            width: 30%;
+            min-width: 200px; /* Lebar minimum sebelum pindah baris */
+            margin-bottom: 20px;
+        }
+
+        .footer-column h4 {
+            color: white; /* Judul kolom lebih terang */
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li a,
+        .footer-column .social-links a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a:hover,
+        .footer-column .social-links a:hover {
+            color: #007BFF; /* Warna biru saat hover */
+        }
+
+        .footer-bottom {
+            background-color: #111; /* Latar lebih gelap lagi */
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
         @media (max-width: 768px) {
     
             /* 1. Ubah arah flexbox di container */
@@ -108,7 +165,7 @@
                 margin-right: 15px; /* Beri jarak kanan */
             }
         }
-        
+
     </style>
 </head>
 <body>
@@ -145,6 +202,35 @@
         </p>
 
     </div>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>TokoSepatu</h4>
+                <p>Menyediakan sepatu kualitas terbaik <br> untuk gaya Anda sehari-hari.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Kategori</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Ikuti Kami</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TokoSepatu. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
 
 </body>
 </html>

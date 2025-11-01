@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Toko E-Commerce Saya</title>
+    <title>Toko E-Commerce Sayaaaaa</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -10,6 +10,11 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+
+            /* -- TAMBAHAN UNTUK STICKY FOOTER -- */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 100% dari tinggi viewport/layar */
         }
 
         /* CSS UNTUK NAVIGASI BARU */
@@ -50,6 +55,42 @@
 
         .navbar .nav-links a:hover {
             color: #007BFF;
+        }
+
+        /* --- CSS UNTUK HERO BANNER --- */
+        .hero-banner {
+            /* Latar belakang gradien gelap (Anda bisa ganti dengan gambar nanti) */
+            background: linear-gradient(to right, #333, #111);
+            color: white;
+            padding: 80px 20px; /* Memberi ketinggian banner */
+            text-align: center;
+            margin-bottom: 20px; /* Jarak ke produk di bawahnya */
+        }
+
+        .hero-content h2 {
+            font-size: 2.8em; /* Judul besar */
+            margin: 0 0 10px 0;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Kita pakai ulang style tombol 'Beli', tapi kita buat baru
+        agar bisa di-custom */
+        .cta-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
         }
 
         /* CSS UNTUK WADAH (FLEXBOX) */
@@ -127,6 +168,63 @@
             border-radius: 0 5px 5px 0; /* Sudut kanan bulat */
         }
 
+        /* --- CSS UNTUK FOOTER --- */
+        .site-footer {
+            background-color: #222; /* Warna latar sangat gelap */
+            color: #aaa;           /* Warna teks abu-abu muda */
+            padding-top: 40px;
+            font-size: 0.9em;
+
+            /* -- INI KUNCINYA -- */
+            margin-top: auto; /* Mendorong footer ke bawah */
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Agar responsif di HP */
+        }
+
+        .footer-column {
+            width: 30%;
+            min-width: 200px; /* Lebar minimum sebelum pindah baris */
+            margin-bottom: 20px;
+        }
+
+        .footer-column h4 {
+            color: white; /* Judul kolom lebih terang */
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li a,
+        .footer-column .social-links a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a:hover,
+        .footer-column .social-links a:hover {
+            color: #007BFF; /* Warna biru saat hover */
+        }
+
+        .footer-bottom {
+            background-color: #111; /* Latar lebih gelap lagi */
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
         /* --- MEDIA QUERY UNTUK MOBILE --- */
         /* Ini akan berlaku jika lebar layar 768px atau lebih kecil */
 
@@ -169,6 +267,15 @@
                 margin-left: 0; /* Hapus margin kiri di HP */
                 margin-right: 15px; /* Beri jarak kanan */
             }
+
+            /* Aturan untuk banner di HP */
+            .hero-banner {
+                padding: 50px 15px; /* Padding lebih kecil */
+            }
+    
+            .hero-content h2 {
+                font-size: 2.2em; /* Judul lebih kecil */
+            }
         }   
         
     </style>
@@ -177,7 +284,7 @@
 
     <nav class="navbar">
         <div class="logo">
-            <a href="index.html">TokoSepatu</a>
+            <a href="index.html">Toko sepatu</a>
         </div>
     
         <div class="search-container">
@@ -191,6 +298,14 @@
             <li><a href="#">Tentang</a></li>
         </ul>
     </nav>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>Koleksi Musim Ini</h2>
+            <p>Temukan gaya terbaru yang pas untuk Anda.</p>
+            <a href="#" class="cta-button">Belanja Sekarang</a>
+        </div>
+    </section>
 
     <div class="container-produk">
 
@@ -208,7 +323,7 @@
             <h4>
                 <a href="detail_Nike_Revolution_7.html">Nike Revolution 7</a>
             </h4>
-            <p>Rp 150.000</p>
+            <p>Rp 485.400</p>
             <button onclick="beliProduk('Nike Revolution 7')">Beli</button>
         </div>
         
@@ -217,11 +332,39 @@
             <h4>
                 <a href="detail_Nike_Air_Force_1_Low.html">Nike Air Force 1 Low</a>
             </h4>
-            <p>Rp 200.000</p>
+            <p>Rp 2.099.000</p>
             <button onclick="beliProduk('Nike Air Force 1 Low')">Beli</button>
         </div>
-
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>TokoSepatu</h4>
+                <p>Menyediakan sepatu kualitas terbaik <br> untuk gaya Anda sehari-hari.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Kategori</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Ikuti Kami</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TokoSepatu. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
 
     <script>
         // Perhatikan 'namaProduk' di dalam tanda kurung
