@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toko E-Commerce Saya</title>
+    
+    <style>
+        /* Mengatur halaman agar rapi */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* CSS UNTUK NAVIGASI BARU */
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #007BFF;
+        }
+
+        /* CSS UNTUK WADAH (FLEXBOX) */
+        .container-produk {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Penting untuk responsif */
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        /* CSS UNTUK KARTU PRODUK */
+        .kartu-produk {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 220px;
+            padding: 15px;
+            text-align: center;
+            background-color: white;
+        }
+
+        /* CSS UNTUK MEMPERBAIKI TAMPILAN LINK */
+        .kartu-produk h4 a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .kartu-produk img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .kartu-produk p {
+            font-weight: bold;
+            color: #e67e22; /* Oranye */
+            font-size: 1.1em;
+        }
+        
+        /* CSS UNTUK TOMBOL */
+        .kartu-produk button {
+            background-color: #007BFF; /* Biru */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+        
+        .kartu-produk button:hover {
+            background-color: #0056b3; /* Biru lebih gelap */
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="toko.html">TokoSepatu</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="toko.html">Home</a></li>
+            <li><a href="#">Kategori</a></li>
+            <li><a href="#">Tentang</a></li>
+        </ul>
+    </nav>
+
+    <div class="container-produk">
+
+        <div class="kartu-produk">
+            <img src="https://www.footlocker.id/media/catalog/product/cache/f57d6f7ebc711fc328170f0ddc174b08/0/1/01-NIKE-FFSSBNIK5-NIKHM9611100-White.jpg" alt="Produk 1">
+            <h4>
+                <a href="detail_Nike_Air_Max.html">Nike Air Max</a>
+            </h4>
+            <p>Rp 2.849.000</p>
+            <button onclick="beliProduk('NIke Air Max')">Beli</button>
+        </div>
+        
+        <div class="kartu-produk">
+            <img src="https://img.ncrsport.com/img/storage/large/FB2207-001-1.jpg" alt="Produk 2">
+            <h4>
+                <a href="detail_Nike_Revolution_7.html">Nike Revolution 7</a>
+            </h4>
+            <p>Rp 150.000</p>
+            <button onclick="beliProduk('Nike Revolution 7')">Beli</button>
+        </div>
+        
+        <div class="kartu-produk">
+            <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/df6f3f13-ef36-4b31-8cc7-d54e1c02305f/custom-nike-air-force-1-low-by-you-shoes.png" alt="Produk 3">
+            <h4>
+                <a href="detail_Nike_Air_Force_1_Low.html">Nike Air Force 1 Low</a>
+            </h4>
+            <p>Rp 200.000</p>
+            <button onclick="beliProduk('Nike Air Force 1 Low')">Beli</button>
+        </div>
+
+    </div>
+
+    <script>
+        // Perhatikan 'namaProduk' di dalam tanda kurung
+        function beliProduk(namaProduk) {
+            // Kita gunakan variabel 'namaProduk' di sini
+            alert(namaProduk + " ditambahkan ke keranjang!");
+        }
+    </script>
+
+</body>
+</html>

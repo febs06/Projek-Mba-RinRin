@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail - Nike Revolution 7</title>
+    
+    <style>
+        /* CSS Sederhana untuk Halaman Detail */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* Tambahkan Navbar di sini juga agar konsisten */
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo a {
+            color: white; text-decoration: none; font-size: 1.5em; font-weight: bold;
+        }
+        .navbar .nav-links {
+            list-style: none; margin: 0; padding: 0; display: flex;
+        }
+        .navbar .nav-links li {
+            margin-left: 20px;
+        }
+        .navbar .nav-links a {
+            color: white; text-decoration: none; font-size: 1em;
+        }
+        .navbar .nav-links a:hover {
+            color: #007BFF;
+        }
+        
+        /* Wadah untuk konten agar rapi */
+        .container {
+            max-width: 800px;
+            margin: 20px auto; /* Trik agar rata tengah */
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .gambar-produk {
+            width: 100%;
+            max-width: 400px; /* Batasi lebar gambar */
+            border-radius: 8px;
+        }
+        
+        .harga {
+            color: #e67e22; /* Oranye */
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .tombol-beli {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        
+        .link-kembali {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            display: block; /* Agar pindah baris */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="toko.html">TokoSepatu</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="toko.html">Home</a></li>
+            <li><a href="#">Kategori</a></li>
+            <li><a href="#">Tentang</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+    
+        <a href="index.html" class="link-kembali">&larr; Kembali ke Daftar Produk</a>
+        
+        <h1>Nike Air Max</h1>
+        
+        <img class="gambar-produk" src="https://img.ncrsport.com/img/storage/large/FB2207-001-1.jpg" alt="Nike Air Max">
+        
+        <p class="harga">Rp 485.400</p>
+        
+        <button class="tombol-beli">Beli Sekarang</button>
+        
+        <h3>Deskripsi Produk</h3>
+        <p>
+            Ini adalah halaman detail produk. Di sini Anda bisa 
+            menambahkan deskripsi yang jauh lebih panjang, 
+            spesifikasi teknis, ulasan pelanggan, dan detail 
+            lainnya yang tidak muat di kartu produk.
+        </p>
+
+    </div>
+
+</body>
+</html>
